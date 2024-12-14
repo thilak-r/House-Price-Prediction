@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Powered Real Estate</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  
+  <style>
+    /* General Styles */
+   /* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0D1513;
+  color: #fff;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.nav-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00ffcc;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #0D1513, #1f4037);
+  color: #fff;
+}
+
+.hero-content {
+  flex: 1 1 45%;
+  max-width: 45%;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+#map {
+  flex: 1 1 45%;
+  width: 100%;
+  max-width: 550px;
+  height: 350px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  margin-top: 1rem;
+}
+
+/* Features Section */
+.features-section {
+  padding: 4rem 2rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.features-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.features-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.features-content ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 1rem 0;
+}
+
+.features-content ul li {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+/* Contact Section */
+.contact-section,about  {
+  background-color: #0D1513;
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-section a {
+  color: #00ffcc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  #map {
+    max-width: 100%;
+  }
+}
+  /* Chatbot Icon */
+  .chatbot-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f4f4f4;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  border: 6px solid black; /* Added black border */
+}
+
+.chatbot-icon:hover {
+  transform: scale(1.1);
+}
+.chatbot-icon img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Chatbot Window */
+.chatbot-window {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 300px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.chatbot-header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px 8px 0 0;
+}
+.chatbot-header h3 {
+  margin: 0;
+}
+.chatbot-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.chatbot-messages {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.chatbot-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+.chatbot-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.chatbot-input button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin-left: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.chatbot-input button:hover {
+  background-color: #45a049;
+}
+
+
+  </style>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/@google/generative-ai"></script>
+
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-brand">
+  <img src="Logo2.png" alt="PriceMap Logo" style="height: 70px; vertical-align: middle; margin-right: 10px;">
+  <span></span>
+</div>
+
+    <ul class="nav-links">
+      <li><a href="#intro">Home</a></li>
+<li><a href="#ai-section">AI Features</a></li>
+<li><a href="http://127.0.0.1:5000/" target="_blank">Predict</a></li>
+
+
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="intro" class="hero-section">
+    <div class="hero-content">
+      <h1>Welcome to PriceMap Bangalore</h1>
+      <p>Your go-to platform for AI-driven property price predictions.</p>
+      <p>We combine the power of Artificial Intelligence and real estate data to make price estimations smarter, faster, and more accurate.</p>
+    </div>
+    <!-- Leaflet Map -->
+    <div id="map"></div>
+  </section>
+
+  <!-- AI Features Section -->
+  <section id="ai-section" class="features-section">
+    <h2>Leveraging AI for Real Estate</h2>
+    <div class="features-content">
+      <p>
+        Our platform uses advanced regression models to analyze multiple factors such as location, size, amenities, market trends, and historical data to predict property prices. Here's how:
+      </p>
+      <ul>
+        <li><strong>Data-Driven Insights:</strong> Extract meaningful patterns from vast datasets.</li>
+        <li><strong>Real-Time Predictions:</strong> Get instant price estimates based on the latest market conditions.</li>
+        <li><strong>Smart Recommendations:</strong> Suggest the best deals based on budget and preferences.</li>
+      </ul>
+      <p>
+        With our AI-powered tools, you can make informed decisions, maximize ROI, and stay ahead in the real estate market.
+      </p>
+    </div>
+  </section>
+
+  <div id="chatbot-icon" class="chatbot-icon">
+    <img src="https://cdn-icons-png.flaticon.com/512/4712/4712106.png" alt="Chatbot">
+  </div>
+
+  <!-- Chatbot Window -->
+  <div id="chatbot-window" class="chatbot-window" style="display: none;">
+    <div class="chatbot-header">
+      <h3>Gemini Chatbot</h3>
+      <button id="close-chatbot">X</button>
+    </div>
+    <div id="chatbot-messages" class="chatbot-messages"></div>
+    <div class="chatbot-input">
+      <input type="text" id="user-message" placeholder="Type your message...">
+      <button id="send-message">Send</button>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <h3>Get in Touch</h3>
+    <p>Have questions or need more information? Contact us at <a href="mailto:info@bhuvansbhuvans113@gmail.com">gmail</a></p>
+  </section>
+
+  <!-- Leaflet JS -->
+ 
+  <script>
+    // Initialize the map
+    const map = L.map('map').setView([12.9716, 77.5946], 12); // Bangalore
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+    L.marker([12.9716, 77.5946]).addTo(map).bindPopup('Welcome to Bangalore!').openPopup();
+
+    // Initialize GoogleGenerativeAI client
+    const client = new GoogleGenerativeAI({
+      apiKey: 'AIzaSyAMzf_CaglLSWAaotLtduJ7pKrwmnh8va8' // Replace with your actual API key
+    });
+
+    // DOM Element References
+    const chatbotIcon = document.getElementById('chatbot-icon');
+    const chatbotWindow = document.getElementById('chatbot-window');
+    const closeChatbot = document.getElementById('close-chatbot');
+    const sendMessageBtn = document.getElementById('send-message');
+    const userMessageInput = document.getElementById('user-message');
+    const chatbotMessages = document.getElementById('chatbot-messages');
+
+    // Show/Hide Chatbot Window
+    chatbotIcon.addEventListener('click', () => {
+      chatbotWindow.style.display = 'block';
+    });
+
+    closeChatbot.addEventListener('click', () => {
+      chatbotWindow.style.display = 'none';
+    });
+
+    // Function to Send a Message to the Gemini API
+    async function generateResponse(userMessage) {
+      try {
+        const model = client.getGenerativeModel({ model: 'gemini-1.5-flash' });
+        const result = await model.generateContent(userMessage);
+        return result.response.text();
+      } catch (error) {
+        console.error('Error generating response:', error);
+        return 'Oops! Something went wrong. Please try again later.';
+      }
+    }
+
+    async function sendMessage() {
+      const userMessage = userMessageInput.value.trim();
+      if (!userMessage) return;
+
+      // Display user message
+      const userMessageDiv = document.createElement('div');
+      userMessageDiv.textContent = `You: ${userMessage}`;
+      chatbotMessages.appendChild(userMessageDiv);
+
+      // Clear input
+      userMessageInput.value = '';
+
+      try {
+        // Generate response
+        const botResponse = await generateResponse(userMessage);
+
+        // Display chatbot response
+        const botMessageDiv = document.createElement('div');
+        botMessageDiv.textContent = `Bot: ${botResponse}`;
+        chatbotMessages.appendChild(botMessageDiv);
+      } catch (error) {
+        console.error('Error:', error);
+        const errorDiv = document.createElement('div');
+        errorDiv.textContent = 'Bot: Oops! Something went wrong. Please try again later.';
+        chatbotMessages.appendChild(errorDiv);
+      }
+
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    // Handle Send Button Click
+    sendMessageBtn.addEventListener('click', sendMessage);
+
+    // Handle "Enter" Key Press to Send Message
+    userMessageInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        sendMessage();
+      }
+    });
+  </script>
+</body>
+</html>

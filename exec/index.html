@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Properties Page</title>
+  <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#properties">Properties</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Properties Section -->
+  <section class="properties-section">
+
+  <div class="property-card">
+      <div class="image-slider">
+          <img src="Project-Photo-22-Prestige-Finsbury-Park-Bangalore-5293409_600_800_0_320.jpg" alt="Property 1" class="active">
+          <img src="71663217_15_PropertyImage681-6118354795815_0_320.jpg" alt="Property 2">
+          <img src="71663217_15_PropertyImage681-6118354795815_0_320.jpg" alt="Property 3">
+           <button class="prev" onclick="prevSlide(this)">❮</button>
+          <button class="next" onclick="nextSlide(this)">❯</button>
+          <div class="dots"></div>
+        </div>
+        <div class="property-details">
+          <div class="property-header">
+             <h3>Folium By Samadhura</h3>
+               <i class="fa-regular fa-heart"></i>
+            </div>
+          <p><strong>Address:</strong> White field, Bangalore</p>
+            <div class = "property-info">
+            <div class="cost">₹14,000 /month</div>
+          <div class = "area-type">
+            <div class="area">900 sqft</div>
+            <div class = "bhk">2 BHK</div>
+           </div>
+         </div>
+          <p><strong>Description:</strong> A beautiful 3-bedroom apartment with modern amenities.</p>
+          <p><strong>Owner:</strong> John Doe</p>
+        </div>
+      <div class = "contact">
+        <button class="view-number">View Number</button>
+        <button class="contact-btn">Contact</button>
+      </div>
+    </div>
+
+    <div class="property-card">
+      <div class="image-slider">
+          <img src="71663217_15_PropertyImage681-6118354795815_0_320.jpg" alt="Property 1" class="active">
+          <img src="Project-Photo-22-Prestige-Finsbury-Park-Bangalore-5293409_600_800_0_320.jpg" alt="Property 2">
+          <img src="71663217_15_PropertyImage681-6118354795815_0_320.jpg" alt="Property 3">
+           <button class="prev" onclick="prevSlide(this)">❮</button>
+          <button class="next" onclick="nextSlide(this)">❯</button>
+         <div class="dots"></div>
+        </div>
+        <div class="property-details">
+         <div class="property-header">
+               <h3>Sarang By Samadhura</h3>
+               <i class="fa-regular fa-heart"></i>
+            </div>
+          <p><strong>Address:</strong> 123 Main Street, City</p>
+            <div class = "property-info">
+            <div class="cost">₹15,000 /month</div>
+          <div class = "area-type">
+            <div class="area">950 sqft</div>
+            <div class = "bhk">3 BHK</div>
+           </div>
+         </div>
+          <p><strong>Description:</strong> A beautiful 3-bedroom apartment with modern amenities.</p>
+          <p><strong>Owner:</strong> Soukya</p>
+        </div>
+      <div class = "contact">
+        <button class="view-number">View Number</button>
+        <button class="contact-btn">Contact</button>
+      </div>
+    </div>
+
+    <div class="property-card">
+     <div class="image-slider">
+        <img src="Project-Photo-48-L-and-T-Raintree-Boulevard-Bangalore-5086183_1500_2000_0_320.jpg" alt="Property 1" class="active">
+          <img src="71663217_15_PropertyImage253-79016614435213_0_320.jpg" alt="Property 2">
+          <img src="71663217_15_PropertyImage253-79016614435213_0_320.jpg" alt="Property 3">
+         <button class="prev" onclick="prevSlide(this)">❮</button>
+          <button class="next" onclick="nextSlide(this)">❯</button>
+        <div class="dots"></div>
+      </div>
+      <div class="property-details">
+         <div class="property-header">
+               <h3>4 BHK Flat for Rent in Whitefield, Bangalore</h3>
+               <i class="fa-regular fa-heart"></i>
+            </div>
+        <p><strong>Address:</strong> Whitefield, Bangalore</p>
+          <div class = "property-info">
+            <div class="cost">₹20,000 /month</div>
+          <div class = "area-type">
+            <div class="area">1000 sqft</div>
+            <div class = "bhk">4 BHK</div>
+           </div>
+         </div>
+        <p><strong>Description:</strong> A beautiful 3-bedroom apartment with modern amenities.</p>
+        <p><strong>Owner:</strong> Sarswathi</p>
+      </div>
+      <div class = "contact">
+        <button class="view-number">View Number</button>
+        <button class="contact-btn">Contact</button>
+      </div>
+    </div>
+
+    <div class="property-card">
+       <div class="image-slider">
+         <img src="71663217_15_PropertyImage253-79016614435213_0_320.jpg" alt="Property 1" class="active">
+          <img src="Project-Photo-48-L-and-T-Raintree-Boulevard-Bangalore-5086183_1500_2000_0_320.jpg" alt="Property 2">
+          <img src="71663217_15_PropertyImage253-79016614435213_0_320.jpg" alt="Property 3">
+          <button class="prev" onclick="prevSlide(this)">❮</button>
+          <button class="next" onclick="nextSlide(this)">❯</button>
+        <div class="dots"></div>
+      </div>
+      <div class="property-details">
+         <div class="property-header">
+                <h3>3 BHK Flat for Rent in Bagalur Main Road, Bangalore</h3>
+               <i class="fa-regular fa-heart"></i>
+            </div>
+        <p><strong>Address:</strong> Bagalur Main Road, Bangalore</p>
+            <div class = "property-info">
+            <div class="cost">₹18,000 /month</div>
+          <div class = "area-type">
+            <div class="area">900 sqft</div>
+            <div class = "bhk">3 BHK</div>
+           </div>
+         </div>
+        <p><strong>Description:</strong> A beautiful 3-bedroom apartment with modern amenities.</p>
+        <p><strong>Owner:</strong> Nagaraju</p>
+      </div>
+      <div class = "contact">
+        <button class="view-number">View Number</button>
+        <button class="contact-btn">Contact</button>
+      </div>
+    </div>
+
+
+     <div class="property-card">
+     <div class="image-slider">
+       <img src="71663217_7_PropertyImage778-9091527145998_0_320.jpg" alt="Property 1" class="active">
+          <img src="71663217_15_PropertyImage253-79016614435213_0_320.jpg" alt="Property 2">
+          <img src="71663217_15_PropertyImage681-6118354795815_0_320.jpg" alt="Property 3">
+          <button class="prev" onclick="prevSlide(this)">❮</button>
+          <button class="next" onclick="nextSlide(this)">❯</button>
+        <div class="dots"></div>
+      </div>
+      <div class="property-details">
+         <div class="property-header">
+                <h3>3 BHK Flat for Rent in Hennur Main Road, Bangalore</h3>
+               <i class="fa-regular fa-heart"></i>
+            </div>
+        <p><strong>Address:</strong> He, Hennur,Bangalore</p>
+           <div class = "property-info">
+            <div class="cost">₹19,000 /month</div>
+          <div class = "area-type">
+            <div class="area">1100 sqft</div>
+            <div class = "bhk">3 BHK</div>
+           </div>
+         </div>
+        <p><strong>Description:</strong> A beautiful 3-bedroom and 1 bathroom.</p>
+        <p><strong>Owner:</strong> Siddaraju</p>
+      </div>
+       <div class = "contact">
+        <button class="view-number">View Number</button>
+        <button class="contact-btn">Contact</button>
+      </div>
+    </div>
+
+    <div class="property-card">
+      <div class="image-slider">
+        <img src="80063_IMG-20231020-WA0097---Hassan-Ansari_470_1080.jpg" alt="Property 1" class="active">
+        <img src="71663217_15_PropertyImage253-79016614435213_0_320.jpg" alt="Property 2">
+        <img src="71663217_7_PropertyImage778-9091527145998_0_320.jpg" alt="Property 3">
+          <button class="prev" onclick="prevSlide(this)">❮</button>
+          <button class="next" onclick="nextSlide(this)">❯</button>
+        <div class="dots"></div>
+      </div>
+      <div class="property-details">
+         <div class="property-header">
+               <h3>4 BHK Flat for rent in Hebbal</h3>
+               <i class="fa-regular fa-heart"></i>
+            </div>
+        <p><strong>Address:</strong> 123 Main Street, City</p>
+           <div class = "property-info">
+            <div class="cost">₹22,000 /month</div>
+          <div class = "area-type">
+            <div class="area">1200 sqft</div>
+            <div class = "bhk">4 BHK</div>
+           </div>
+         </div>
+        <p><strong>Description:</strong> A beautiful 3-bedroom apartment with modern amenities.</p>
+        <p><strong>Owner:</strong> Bhavya shree</p>
+      </div>
+      <div class = "contact">
+        <button class="view-number">View Number</button>
+        <button class="contact-btn">Contact</button>
+      </div>
+    </div>
+
+     <div class="property-card">
+      <div class="image-slider">
+        <img src="76165997_2_PropertyImage481-8359256857341_0_320 (1).jpg" alt="Property 1" class="active">
+          <img src="71663217_15_PropertyImage681-6118354795815_0_320.jpg" alt="Property 2">
+          <img src="71663217_7_PropertyImage778-9091527145998_0_320.jpg" alt="Property 3">
+          <button class="prev" onclick="prevSlide(this)">❮</button>
+          <button class="next" onclick="nextSlide(this)">❯</button>
+        <div class="dots"></div>
+      </div>
+      <div class="property-details">
+         <div class="property-header">
+               <h3>2 BHK for Rent</h3>
+               <i class="fa-regular fa-heart"></i>
+            </div>
+        <p><strong>Address:</strong> 123 Main Street, City</p>
+            <div class = "property-info">
+            <div class="cost">₹13,000 /month</div>
+          <div class = "area-type">
+            <div class="area">800 sqft</div>
+            <div class = "bhk">2 BHK</div>
+           </div>
+         </div>
+        <p><strong>Description:</strong> A beautiful 3-bedroom apartment with modern amenities.</p>
+        <p><strong>Owner:</strong> Vicktor</p>
+      </div>
+       <div class = "contact">
+        <button class="view-number">View Number</button>
+        <button class="contact-btn">Contact</button>
+      </div>
+    </div>
+
+    <div class="property-card">
+     <div class="image-slider">
+        <img src="76165997_1_PropertyImage769-7185413001623_0_320.jpg" alt="Property 1" class="active">
+          <img src="76165997_2_PropertyImage481-8359256857341_0_320 (1).jpg" alt="Property 2">
+          <img src="71663217_15_PropertyImage681-6118354795815_0_320.jpg" alt="Property 3">
+         <button class="prev" onclick="prevSlide(this)">❮</button>
+          <button class="next" onclick="nextSlide(this)">❯</button>
+        <div class="dots"></div>
+      </div>
+      <div class="property-details">
+           <div class="property-header">
+               <h3>3 BHK</h3>
+                <i class="fa-regular fa-heart"></i>
+            </div>
+        <p><strong>Address:</strong> Soukya Road, Bangalore</p>
+         <div class = "property-info">
+            <div class="cost">₹25,000 /month</div>
+          <div class = "area-type">
+            <div class="area">2910 sqft</div>
+            <div class = "bhk">3 BHK</div>
+           </div>
+         </div>
+        <p><strong>Description:</strong> 2910 sqft.</p>
+        <p><strong>Owner:</strong> satyam singh</p>
+      </div>
+      <div class = "contact">
+        <button class="view-number">View Number</button>
+        <button class="contact-btn">Contact</button>
+      </div>
+    </div>
+
+    <div class="property-card">
+    <div class="image-slider">
+        <img src="73808283_2_PropertyImage505-2211878124767_0_320.jpg" alt="Property 1" class="active">
+          <img src="73808283_9_PropertyImage720-5755387848508_0_320.jpg" alt="Property 2">
+          <img src="71663217_15_PropertyImage681-6118354795815_0_320.jpg" alt="Property 3">
+          <button class="prev" onclick="prevSlide(this)">❮</button>
+          <button class="next" onclick="nextSlide(this)">❯</button>
+        <div class="dots"></div>
+      </div>
+      <div class="property-details">
+        <div class="property-header">
+              <h3> 3 BHK in Thanisandra</h3>
+               <i class="fa-regular fa-heart"></i>
+            </div>
+        <p><strong>Address:</strong> Thanisandra,bangalore</p>
+           <div class = "property-info">
+            <div class="cost">₹20,000 /month</div>
+          <div class = "area-type">
+            <div class="area">1000 sqft</div>
+            <div class = "bhk">3 BHK</div>
+           </div>
+         </div>
+        <p><strong>Description:</strong> Ready to move </p>
+        <p><strong>Owner:</strong>saad Zahid</p>
+      </div>
+     <div class = "contact">
+        <button class="view-number">View Number</button>
+        <button class="contact-btn">Contact</button>
+      </div>
+    </div>
+
+   <div class="property-card">
+      <div class="image-slider">
+        <img src="73808283_9_PropertyImage720-5755387848508_0_320.jpg" alt="Property 1" class="active">
+          <img src="73808283_2_PropertyImage505-2211878124767_0_320.jpg" alt="Property 2">
+          <img src="71663217_7_PropertyImage778-9091527145998_0_320.jpg" alt="Property 3">
+          <button class="prev" onclick="prevSlide(this)">❮</button>
+          <button class="next" onclick="nextSlide(this)">❯</button>
+        <div class="dots"></div>
+      </div>
+      <div class="property-details">
+         <div class="property-header">
+              <h3>2 BHK in seshadripuram </h3>
+                <i class="fa-regular fa-heart"></i>
+            </div>
+        <p><strong>Address:</strong>seshadripuram,bangalore</p>
+           <div class = "property-info">
+            <div class="cost">₹15,000 /month</div>
+          <div class = "area-type">
+            <div class="area">800 sqft</div>
+            <div class = "bhk">2 BHK</div>
+           </div>
+         </div>
+        <p><strong>Description:</strong> A beautiful 2-bedroom apartment .</p>
+        <p><strong>Owner:</strong>vinuraj</p>
+      </div>
+      <div class = "contact">
+        <button class="view-number">View Number</button>
+        <button class="contact-btn">Contact</button>
+      </div>
+    </div>
+
+   <div class="property-card">
+      <div class="image-slider">
+        <img src="76165249_16_hatsAppImage20241124at21.28.522_0_320.jpeg" alt="Property 1" class="active">
+          <img src="73808283_2_PropertyImage505-2211878124767_0_320.jpg" alt="Property 2">
+          <img src="71663217_15_PropertyImage681-6118354795815_0_320.jpg" alt="Property 3">
+         <button class="prev" onclick="prevSlide(this)">❮</button>
+          <button class="next" onclick="nextSlide(this)">❯</button>
+         <div class="dots"></div>
+      </div>
+      <div class="property-details">
+         <div class="property-header">
+                <h3>3 BHK in Hebbal</h3>
+               <i class="fa-regular fa-heart"></i>
+            </div>
+        <p><strong>Address:</strong> hebbal,bangalore</p>
+           <div class = "property-info">
+            <div class="cost">₹19,000 /month</div>
+          <div class = "area-type">
+            <div class="area">1100 sqft</div>
+            <div class = "bhk">3 BHK</div>
+           </div>
+         </div>
+        <p><strong>Description:</strong> A beautiful 3-bedroom apartment with modern amenities.</p>
+        <p><strong>Owner:</strong> Moniraju</p>
+      </div>
+      <div class = "contact">
+        <button class="view-number">View Number</button>
+        <button class="contact-btn">Contact</button>
+      </div>
+    </div>
+
+   <div class="property-card">
+       <div class="image-slider">
+        <img src="71663217_15_PropertyImage681-6118354795815_0_320.jpg" alt="Property 1" class="active">
+          <img src="p71663217_15_PropertyImage681-6118354795815_0_320.jpg" alt="Property 2">
+          <img src="73808283_2_PropertyImage505-2211878124767_0_320.jpg" alt="Property 3">
+          <button class="prev" onclick="prevSlide(this)">❮</button>
+          <button class="next" onclick="nextSlide(this)">❯</button>
+        <div class="dots"></div>
+      </div>
+      <div class="property-details">
+         <div class="property-header">
+               <h3>3 BHK Flat in Agrahara badavane,bangalore</h3>
+               <i class="fa-regular fa-heart"></i>
+            </div>
+        <p><strong>Address:</strong>Agrahara badavane,bangalore</p>
+           <div class = "property-info">
+            <div class="cost">₹23,000 /month</div>
+          <div class = "area-type">
+            <div class="area">1050 sqft</div>
+            <div class = "bhk">3 BHK</div>
+           </div>
+         </div>
+        <p><strong>Description:</strong> ready to move.</p>
+        <p><strong>Owner:</strong>ganesh</p>
+      </div>
+      <div class = "contact">
+        <button class="view-number">View Number</button>
+        <button class="contact-btn">Contact</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
