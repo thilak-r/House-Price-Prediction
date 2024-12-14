@@ -1,0 +1,143 @@
+/* Base styles */
+:root {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  --border-radius: 10px;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: var(--primary-gradient);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+/* Card styles */
+.card-container {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+
+.card {
+  position: absolute;
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Form styles */
+.form-card {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.result-card {
+  left: 150%;
+  transform: translateX(-50%);
+}
+
+/* Animations */
+.slide-left {
+  transform: translateX(-150%);
+}
+
+.slide-center {
+  transform: translateX(-50%);
+}
+
+/* Form elements */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: 600;
+  color: #4a5568;
+}
+
+select, input {
+  padding: 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+select:focus, input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+/* Buttons */
+button {
+  background: var(--primary-gradient);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Result styles */
+.result-content {
+  text-align: center;
+}
+
+.prediction-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4a5568;
+  margin: 30px 0;
+  padding: 20px;
+  background: #f7fafc;
+  border-radius: var(--border-radius);
+}
+
+.back-button {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+/* Error styles */
+.error-message {
+  color: #e53e3e;
+  background: #fff5f5;
+  padding: 12px;
+  border-radius: var(--border-radius);
+  margin-top: 10px;
+  border: 1px solid #fc8181;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.result-card {
+  animation: fadeIn 0.5s ease-in-out;
+}

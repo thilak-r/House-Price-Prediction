@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bengaluru House Price Prediction</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Bengaluru House Price Prediction</h1>
+        
+        <div class="card-container">
+            <div class="card form-card" id="formCard">
+                <form id="predictionForm" action="/predict" method="POST">
+                    <label for="location">Location:</label>
+                    <select id="location" name="location" required>
+                        {% for loc in locations %}
+                        <option value="{{ loc }}">{{ loc }}</option>
+                        {% endfor %}
+                    </select>
+                    
+                    <label for="sqft">Square Feet:</label>
+                    <input type="number" id="sqft" name="sqft" required min="1">
+                    
+                    <label for="bath">Number of Bathrooms:</label>
+                    <input type="number" id="bath" name="bath" required min="1">
+                    
+                    <label for="bhk">Number of Bedrooms:</label>
+                    <input type="number" id="bhk" name="bhk" required min="0">
+                    
+                    <button type="submit">Predict Price</button>
+                </form>
+
+                {% if prediction_text and 'Error' in prediction_text %}
+                <div class="error-message">
+                    {{ prediction_text }}
+                </div>
+                {% endif %}
+            </div>
+            
+            <div class="card result-card" id="resultCard">
+                <div class="result-content">
+                    <h2>Predicted Price</h2>
+                    <div class="prediction-value" id="predictionValue">
+                        {% if prediction_text and 'Error' not in prediction_text %}
+                        {{ prediction_text }}
+                        {% endif %}
+                    </div>
+                    <button class="back-button">Make Another Prediction</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
