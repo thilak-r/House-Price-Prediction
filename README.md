@@ -1,3 +1,4 @@
+### ***Note: This project is mainly focused on bangalore city***
 # Price Prediction Model
 
 ## Table of Contents
@@ -133,12 +134,12 @@ Prerequisites
 
 Clone the repository:
 ```
-git clone https://github.com/your-repo/price-prediction-app.git
+git clone https://github.com/your-repo/House-Price-Prediction.git
 ```
 
 Navigate to the project directory:
 ```
-cd price-prediction-app
+cd House-Price-Prediction
 ```
 
 Install dependencies:
