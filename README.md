@@ -184,5 +184,6 @@ Add explainability methods like SHAP or LIME.
 Deploy on cloud platforms like AWS or Heroku for broader access.
 
 Feel free to contribute to this project by creating a pull request or raising an issue!
+<br>
 under guidance of [Dr Agughasi Victor Ikechukwu](https://github.com/Victor-Ikechukwu)
 
