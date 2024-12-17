@@ -5,7 +5,7 @@
 
 - Introduction
 
-- Project Structure
+-Project Structure
 
 - Features
 
@@ -22,6 +22,7 @@
 - Future Scope
 
 ## Introduction
+
 
 This project focuses on building a House Price Prediction Model using machine learning. The goal is to predict house prices based on various features such as location, size, total square footage, number of bathrooms, and more. The application is deployed as a web app using Flask.
 
