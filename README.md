@@ -5,7 +5,7 @@
 
 - Introduction
 
--Project Structure
+### Project Structure
 
 - Features
 
@@ -130,6 +130,7 @@ Prerequisites
 - Pandas
 
 - Scikit-learn
+---
 
 ## Installation Steps
 
