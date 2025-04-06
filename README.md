@@ -1,10 +1,6 @@
 ### ***Note: This project is mainly focused on bangalore city***
 # Price Prediction Model
 
-## Table of Contents
-
-- Introduction
-
 ### Project Structure
 
 - Features
